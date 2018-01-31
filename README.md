@@ -1,2 +1,2 @@
-# halo-aura
+# aura
 Unofficial Halo SDK
