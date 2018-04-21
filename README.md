@@ -1,2 +1,2 @@
 # aura
-Unofficial Halo SDK
+Unofficial SDK for Mobgen's HALO.

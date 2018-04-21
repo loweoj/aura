@@ -1,0 +1,40 @@
+{
+  "name": "halo-aura",
+  "version": "1.4.1",
+  "description": "Unofficial SDK for Mobgen's HALO.",
+  "author": "Oliver Lowe <olly@smartify.org.uk>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loweoj/halo-aura"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "0.25.0",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.2.3",
+    "babel-preset-env": "1.6.1",
+    "coveralls": "3.0.0",
+    "es6-plato": "1.0.17",
+    "eslint": "4.19.1",
+    "eslint-config-standard": "11.0.0",
+    "eslint-plugin-standard": "3.0.1",
+    "nyc": "11.7.1"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "ava": "ava",
+    "clean": "rm -rf coverage && rm -rf dist",
+    "compile": "babel src -d dist -s",
+    "coverage": "nyc --reporter=lcov npm run ava && nyc report",
+    "coveralls": "nyc npm run ava && nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/**/*.js",
+    "plato": "es6-plato -d coverage/plato src/**/*.js",
+    "test": "npm run coveralls && rm -rf ./coverage"
+  },
+  "ava": {
+    "require": "babel-register",
+    "babel": "inherit"
+  }
+}
